@@ -1,0 +1,16 @@
+# github context
+name: Github context example
+on: workflow_dispatch
+jobs:
+  show-github-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github Context
+        run: | # "|" is a new line in YAML, useful for readable multiline commands
+          echo "Event Name: ${{ github.event_name }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run number: ${{ github.run_number }}"
