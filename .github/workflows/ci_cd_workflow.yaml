@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: ecr-lab10
+  ECR_REPOSITORY: sentiment-app-onnx
   S3_BUCKET: mlops11-wiadro-bs
 
 jobs:
