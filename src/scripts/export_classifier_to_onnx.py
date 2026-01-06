@@ -4,7 +4,7 @@ import joblib
 from skl2onnx import convert_sklearn
 from skl2onnx.common.data_types import FloatTensorType
 
-from settings import Settings
+from src.scripts.settings import Settings
 
 
 def export_classifier_to_onnx(settings: Settings):
