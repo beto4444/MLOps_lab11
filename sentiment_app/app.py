@@ -4,6 +4,8 @@ from src.scripts.settings import Settings
 from tokenizers import Tokenizer
 import numpy as np
 import onnxruntime as ort
+
+from mangum import Mangum
 settings = Settings()
 
 SENTIMENT_MAP = {
@@ -55,3 +57,5 @@ def predict(input_data: TextInput):
 
     label = SENTIMENT_MAP.get(int(prediction[0]), "unknown") # return this label as response
     return PredictionOutput(prediction=label)
+
+handler = Mangum(app)
