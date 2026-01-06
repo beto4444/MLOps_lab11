@@ -4,8 +4,6 @@ Transform: AWS::Serverless-2016-10-31
 Parameters:
   ImageUri:
     Type: String
-  LambdaExecutionRoleArn:
-    Type: String
 
 Resources:
   SentimentFunction:
@@ -13,7 +11,6 @@ Resources:
     Properties:
       PackageType: Image
       ImageUri: !Ref ImageUri
-      Role: !Ref LambdaExecutionRoleArn
       MemorySize: 512
       Timeout: 30
       Events:
