@@ -1,6 +1,16 @@
 name: CI/CD workflow
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      steps:
+        description: "Which steps to run"
+        required: true
+        type: choice
+        options:
+          - integration
+          - all
+        default: all
 
 env:
   AWS_REGION: us-east-1
@@ -9,6 +19,7 @@ env:
 
 jobs:
   integration:
+    if: ${{ github.event.inputs.steps == 'integration' || github.event.inputs.steps == 'all' }}
     name: checks_and_tests
     runs-on: ubuntu-latest
     steps:
@@ -30,6 +41,7 @@ jobs:
     name: deploy_to_aws
     needs: integration
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.steps == 'all' && needs.integration.result == 'success' }}
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
