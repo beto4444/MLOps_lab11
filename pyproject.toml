@@ -3,5 +3,47 @@ name = "mlops-lab11"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.12"
+
+dependencies = [
+  "fastapi",
+  "pydantic-settings",
+  "numpy",
+  "joblib",
+]
+
+[dependency-groups]
+
+inference = [
+  "fastapi",
+  "uvicorn",
+  "numpy",
+  "onnxruntime",
+  "tokenizers",
+  "pydantic-settings",
+  "joblib",
+  "clean-text",
+  "mangum",
+  "awslambdaric",
+]
+
+deployment = [
+  "torch",
+  "transformers",
+  "sentence-transformers",
+  "scikit-learn",
+  "skl2onnx",
+  "onnx",
+  "boto3",
+  "numpy",
+  "joblib",
+  "clean-text",
+]
+
+integration = [
+  "pytest",
+  "ruff",
+  "mypy",
+  "pre-commit",
+  "httpx",
+]
