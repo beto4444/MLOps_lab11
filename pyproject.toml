@@ -12,6 +12,7 @@ dependencies = [
   "joblib",
   "skl2onnx>=1.19.1",
   "packaging>=25.0",
+  "awslambdaric",
 ]
 
 [dependency-groups]
