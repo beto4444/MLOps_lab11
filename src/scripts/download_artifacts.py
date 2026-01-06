@@ -1,5 +1,5 @@
 import boto3
-import settings
+from src.scripts import settings
 import os
 
 def download_artifacts(settings: settings.Settings):

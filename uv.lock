@@ -601,7 +601,9 @@ dependencies = [
     { name = "fastapi" },
     { name = "joblib" },
     { name = "numpy" },
+    { name = "packaging" },
     { name = "pydantic-settings" },
+    { name = "skl2onnx" },
 ]
 
 [package.dev-dependencies]
@@ -643,7 +645,9 @@ requires-dist = [
     { name = "fastapi" },
     { name = "joblib" },
     { name = "numpy" },
+    { name = "packaging", specifier = ">=25.0" },
     { name = "pydantic-settings" },
+    { name = "skl2onnx", specifier = ">=1.19.1" },
 ]
 
 [package.metadata.requires-dev]

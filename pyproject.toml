@@ -10,6 +10,8 @@ dependencies = [
   "pydantic-settings",
   "numpy",
   "joblib",
+  "skl2onnx>=1.19.1",
+  "packaging>=25.0",
 ]
 
 [dependency-groups]
