@@ -1,7 +1,7 @@
 # export_sentence_transformer_to_onnx.py
 
 import os
-from settings import Settings
+from src.scripts.settings import Settings
 import torch
 from transformers import AutoTokenizer, AutoModel
 
