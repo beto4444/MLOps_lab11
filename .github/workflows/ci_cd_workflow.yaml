@@ -78,7 +78,9 @@ jobs:
           docker build -t $REPOSITORY:$IMAGE_TAG .
           docker tag $REPOSITORY:$IMAGE_TAG $REGISTRY/$REPOSITORY:$IMAGE_TAG
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
-
+      - name: Show github sha
+        run: echo "GITHUB_SHA=${{ github.sha }}"
+        
       - name: Delete stack if in rollback state
         run: |
           STATUS=$(aws cloudformation describe-stacks \
