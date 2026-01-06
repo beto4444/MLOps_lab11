@@ -38,6 +38,8 @@ deployment = [
   "numpy",
   "joblib",
   "clean-text",
+  "fastapi",
+  "boto3",
 ]
 
 integration = [
