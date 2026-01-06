@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-install-project
+RUN uv sync --frozen --group inference --no-install-project
 
 # Runtime stage
 FROM python:3.12-slim-bookworm
